@@ -11,22 +11,27 @@
 <body>
   <header>
     <nav>
-      <div class="logo">Fruver</div>
+      <div class="logo">
+      <strong>
+        Fruver
+      </strong>
+      </div>
       <ul class="menu">
-        <li><a href="#">Home</a></li>
+        <li><a href="#">Inicio</a></li>
         <li><a href="#">Tienda</a></li>
+        <li><a href="#">Productos</a></li>
         <li class="dropdown">
-          <a href="#">Productos</a>
+          <a href="#">Página <i style="font-size: small;">˅</i></a>
           <ul class="dropdown-menu">
             <li><a href="#">Carrito</a></li>
             <li><a href="#">Checkout</a></li>
             <li><a href="#">Comentarios</a></li>
           </ul>
         </li>
-        <li><a href="#">Página</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Contactenos</a></li>        
       </ul>
       <div class="icons">
+        <i class="fa fa-search"></i>
         <i class="fa fa-shopping-cart"></i>
         <i class="fa fa-user"></i>
       </div>
@@ -40,7 +45,7 @@
     <div class="hero-text">
       <h1>Organic Veggies & Fruits Foods</h1>
       <input type="text" placeholder="Buscar">
-      <button>Buscar Ahora</button>
+      <button>Submit Now</button>
     </div>
   </section>
 
@@ -70,24 +75,32 @@
     </div>
   </section>
 
-  <section class="products">
-    <h2>Productos Orgánicos</h2>
+<!-- Sección de productos -->
+<section class="products">
+    <div class="products-header">
+      <h2>Productos Orgánicos</h2>
+      <div class="product-filters">
+        <button class="filter-btn active">Todos los productos</button>
+        <button class="filter-btn">Vegetales</button>
+        <button class="filter-btn">Frutas</button>
+        <button class="filter-btn">Pan de cereales</button>
+      </div>
+    </div>
+    <!-- Resto del código de productos -->
     <div class="product-grid">
-      <div class="product">
+      <!-- Productos existentes -->
+      <div class="product" data-category="frutas">
         <img src="img/grapes.png" alt="Grapes">
         <h3>Grapes</h3>
         <p>Precio: $4.50</p>
       </div>
-      <div class="product">
+      <div class="product" data-category="frutas">
         <img src="img/apricots.png" alt="Apricots">
         <h3>Apricots</h3>
         <p>Precio: $3.20</p>
       </div>
+      <!-- Agrega más productos aquí, asignando la categoría correcta -->
     </div>
   </section>
-
-  <footer>
-    <p>© 2024 Fruver. Todos los Derechos Reservados.</p>
-  </footer>
 </body>
 </html>
