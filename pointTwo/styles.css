@@ -208,3 +208,90 @@ footer {
     padding: 5px;
   }
 }
+
+/* Estilos existentes... */
+
+/* Estilos para la lista desplegable */
+.menu li {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #8dc63f;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu li a {
+  color: white;
+  padding: 10px 20px;
+  display: block;
+  font-size: 1rem;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #7ab031;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Estilos para la sección de características */
+.features {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  flex: 1 1 22%;
+  text-align: center;
+  margin: 10px;
+}
+
+.feature-item i {
+  font-size: 2.5rem;
+  color: #ffd700; /* Color amarillo */
+  margin-bottom: 10px;
+}
+
+.feature-item h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Ajustes responsivos para la sección de características */
+@media (max-width: 768px) {
+  .feature-item {
+    flex: 1 1 45%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .feature-item {
+    flex: 1 1 100%;
+  }
+}
