@@ -56,6 +56,7 @@ nav {
 /* Hero Section */
 .hero {
   display: flex;
+  flex-direction: row-reverse; /* Imagen a la derecha */
   justify-content: space-between;
   align-items: center;
   padding: 20px;
@@ -66,6 +67,7 @@ nav {
 
 .hero-text {
   flex: 1;
+  margin-right: 20px;
 }
 
 .hero-text h1 {
@@ -154,7 +156,8 @@ footer {
 /* Media Query para 300px a 500px */
 @media (min-width: 300px) and (max-width: 500px) {
   .hero {
-    flex-direction: column;
+    flex-direction: column; /* Imagen encima del texto */
+    align-items: center;
     text-align: center;
   }
 
@@ -162,16 +165,19 @@ footer {
     max-width: 150px;
   }
 
+  .hero-text {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
   .hero-text h1 {
     font-size: 1.5rem;
-    color: blue;
-    margin-top: 10px;
+    color: blue; /* Texto en color azul */
   }
 
   .menu {
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
 
   .menu li {
