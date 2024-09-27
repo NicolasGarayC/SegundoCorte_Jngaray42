@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validador de correos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <form>
+    <div class="form-group">
+      <label for="emails">Correo(s):</label>
+      <textarea id="emails" name="emails" placeholder="Ingresa correos separados por ';', ',' o nueva línea" rows="6"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="invalidEmails">Correos Erróneos:</label>
+      <textarea id="invalidEmails" name="invalidEmails" readonly rows="6"></textarea>
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

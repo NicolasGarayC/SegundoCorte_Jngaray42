@@ -1,0 +1,19 @@
+/* Estilo por defecto para los campos */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo de error cuando hay correos inválidos */
+  .error {
+    border: 2px solid red;
+  }
+  
+  /* Separación entre los campos */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
