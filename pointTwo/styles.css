@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: white;
   color: #333;
   font-size: 16px;
 }
@@ -38,6 +38,7 @@ nav {
 
 .menu li {
   margin: 0 10px;
+  position: relative; /* Necesario para la lista desplegable */
 }
 
 .menu li a {
@@ -45,6 +46,10 @@ nav {
   color: #88c015; 
   font-weight: bold;
   font-size: 1rem;
+}
+
+.menu li a:hover {
+  color: #6fa010; 
 }
 
 .icons i {
@@ -57,6 +62,38 @@ nav {
   color: #6fa010; /* Color más oscuro al pasar el ratón por encima de los iconos */
 }
 
+/* Estilos para la lista desplegable */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #ecebeb;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu li a {
+  color: #88c015;
+  padding: 10px 20px;
+  display: block;
+  font-size: 1rem;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #a09f9f;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 /* Hero Section */
 .hero {
   display: flex;
@@ -64,7 +101,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #fff;
+  min-width: 295px;
+  background-color: #fbf9f3;
   margin: 20px 0;
   flex-wrap: wrap;
 }
@@ -106,21 +144,119 @@ nav {
   height: auto;
 }
 
-/* Products */
+/* Sección de características */
+.features {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  flex: 1 1 22%;
+  text-align: center;
+  margin: 10px;
+  background-color: #f4f6f8;
+  min-height: 190px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.feature-item i {
+  font-size: 2.5rem;
+  color: #ffb524; /* Color amarillo */
+  margin-bottom: 10px;
+}
+
+.feature-item h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Ajustes responsivos para la sección de características */
+@media (max-width: 768px) {
+  .feature-item {
+    flex: 1 1 45%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .feature-item {
+    flex: 1 1 100%;
+  }
+}
+
+/* Sección de productos */
 .products {
   padding: 20px;
 }
 
-.products h2 {
-  text-align: center;
+.products-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 20px;
-  color: #8dc63f;
+}
+
+.products-header h2 {
+  margin: 0;
+  color: #565759;
   font-size: 2rem;
 }
 
+.product-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-btn {
+  background-color: #fff;
+  color: #ffb524;
+  padding: 10px 15px;
+  border: 2px solid #f4f6f8; /* Añadido 'solid' al borde */
+  border-radius: 5px; /* Ajustado a un solo valor */
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #ffb524;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .products-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-filters {
+    margin-top: 10px;
+  }
+}
+
+/* Productos */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual ancho */
   gap: 20px;
 }
 
@@ -129,6 +265,22 @@ nav {
   padding: 10px;
   text-align: center;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid #dfb874;
+  border-radius: 10px;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between; /* Alinea el precio y el botón a los lados */
+  align-items: center; /* Alinea verticalmente */
+  margin-top: 10px;
+}
+
+.product-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: #8dc63f;
+  font-weight: bold;
 }
 
 .product img {
@@ -145,6 +297,42 @@ nav {
 .product p {
   color: #8dc63f;
   font-size: 1rem;
+}
+
+.add-to-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  border: 2px solid #dfb874;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Estilos para el icono y el texto dentro del div */
+.add-to-cart i {
+  color: #67c614;
+  margin-right: 5px;
+}
+
+.add-to-cart span {
+  color: #67c614; /* Color del texto */
+  font-weight: bold;
+}
+
+/* Efecto hover para cambiar el fondo del contenedor */
+.add-to-cart:hover {
+  background-color: #dfb874; /* Color de fondo al pasar el ratón */
+}
+
+.add-to-cart:hover i,
+.add-to-cart:hover span {
+  color: white; /* Cambia el color del texto e icono al pasar el ratón */
+}
+/* Clase .gris */
+.gris {
+  color: #ABAAA9; /* Corregido: se eliminaron las comillas */
 }
 
 /* Footer */
@@ -176,7 +364,6 @@ footer {
 
   .hero-text h1 {
     font-size: 1.5rem;
-    color: blue; /* Texto en color azul */
   }
 
   .menu {
@@ -189,7 +376,7 @@ footer {
   }
 
   .product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
   }
 
   nav {
@@ -210,156 +397,5 @@ footer {
   footer {
     font-size: 0.875rem;
     padding: 5px;
-  }
-}
-
-/* Estilos existentes... */
-
-/* Estilos para la lista desplegable */
-.menu li {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: #ecebeb;
-  top: 100%;
-  left: 0;
-  list-style: none;
-  padding: 10px 0;
-  min-width: 150px;
-  z-index: 1000;
-}
-
-.menu li a:hover {
-  color: #6fa010; 
-}
-
-.dropdown-menu li {
-  color: white;
-
-  margin: 0;
-}
-.dropdown-menu li a {
-  color: #88c015;
-  padding: 10px 20px;
-  display: block;
-  font-size: 1rem;
-}
-
-.dropdown-menu li a:hover {
-  background-color: #a09f9f;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Estilos para la sección de características */
-.features {
-  background-color: #fff;
-  padding: 20px;
-}
-
-.features-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.feature-item {
-  flex: 1 1 22%;
-  text-align: center;
-  margin: 10px;
-}
-
-.feature-item i {
-  font-size: 2.5rem;
-  color: #ffd700; /* Color amarillo */
-  margin-bottom: 10px;
-}
-
-.feature-item h3 {
-  font-size: 1.25rem;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.feature-item p {
-  font-size: 1rem;
-  color: #555;
-}
-
-/* Ajustes responsivos para la sección de características */
-@media (max-width: 768px) {
-  .feature-item {
-    flex: 1 1 45%;
-    margin: 10px 0;
-  }
-}
-
-@media (max-width: 500px) {
-  .feature-item {
-    flex: 1 1 100%;
-  }
-}
-
-
-
-/* Estilos para la sección de productos */
-.products {
-  padding: 20px;
-}
-
-.products-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.products-header h2 {
-  margin: 0;
-  color: #8dc63f;
-  font-size: 2rem;
-}
-
-.product-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.filter-btn {
-  background-color: #fff;
-  color: #8dc63f;
-  border: 2px solid #8dc63f;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.filter-btn:hover {
-  background-color: #8dc63f;
-  color: #fff;
-}
-
-.filter-btn.active {
-  background-color: #8dc63f;
-  color: #fff;
-}
-
-@media (max-width: 768px) {
-  .products-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .product-filters {
-    margin-top: 10px;
   }
 }
